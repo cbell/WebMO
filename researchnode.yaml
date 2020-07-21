@@ -128,7 +128,7 @@ Resources:
       - Key: Deployment
         Value: !Ref 'EnvironmentName'
       - Key: Name
-        Value: node.csm.calpoly.edu 
+        Value: !Ref $Hostname
       - Key: Project
         Value: !Ref ProjectName
       BlockDeviceMappings:
@@ -200,7 +200,7 @@ Resources:
         hostname:
           commands:
             hostname:
-              command: "sudo hostnamectl set-hostname $Hostname"
+              command: !Ref "sudo hostnamectl set-hostname $Hostname"
               ignoreErrors: true 
         hosts:
           commands:
