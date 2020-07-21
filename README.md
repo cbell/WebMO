@@ -126,6 +126,16 @@ If you initially added the server, and these files failed to copy - you will nee
 
 When the server is being re-added, you should notice the process takes longer. This is tells you that the script changes are in place.  
 
+### Additional customizations 
+
+If you have jobs that are long lived (multiple hours to days) you may need to make changes to the ssh configuration on the server.  
+Make this change to the /etc/ssh/sshd_config file on the *remote server*
+
+        ClientAliveInterval 120
+        ClientAliveCountMax 960
+
+This will send a keep alive every two minutes back through the connection, and also add a very generous timeout window. Example sshd_config is available. 
+
 ## Installing interfaces  
 ### Gamess  
 
