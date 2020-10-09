@@ -166,6 +166,9 @@ This will send a keep alive every two minutes back through the connection, and a
 
 8. Start the config:
 
+        cd /usr/local/gamess
+        ./config 
+
     - Follow the on screen prompts
     - Set the machine type to linux64
     - Leave the gamess installation directory as the default
